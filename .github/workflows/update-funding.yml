@@ -3,8 +3,8 @@ name: Update funding counters
 on:
   workflow_dispatch:
     inputs:
-      ev_core:
-        description: "E.V. Core raised amount in USD (example: 125.50)"
+      yuena_core:
+        description: "Yuena Core raised amount in USD (example: 125.50)"
         required: true
         default: "0"
         type: string
@@ -31,7 +31,7 @@ jobs:
 
       - name: Validate and update counters
         env:
-          EV_CORE: ${{ inputs.ev_core }}
+          YUENA_CORE: ${{ inputs.yuena_core }}
           JAPAN: ${{ inputs.japan }}
           MOTORCYCLE: ${{ inputs.motorcycle }}
         run: |
@@ -41,7 +41,7 @@ jobs:
           import os, re
 
           values = {
-              "evCore": os.environ["EV_CORE"],
+              "yuenaCore": os.environ["YUENA_CORE"],
               "japan": os.environ["JAPAN"],
               "motorcycle": os.environ["MOTORCYCLE"],
           }

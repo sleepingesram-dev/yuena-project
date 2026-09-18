@@ -1,10 +1,10 @@
-# E.V. / Projects & Roadmap
+# Yuena / Projects & Roadmap
 
-Public-facing project hub for **E.V.**, a persistent personal AI system, plus the connected long-term roadmap around moving to Japan, motorcycles, and E.V. Base.
+Public-facing project hub for **Yuena**, a persistent personal AI system, plus the connected long-term roadmap around moving to Japan, motorcycles, and Yuena Base.
 
-## E.V.
+## Yuena
 
-E.V. is being built as a persistent assistant across trusted devices rather than as a single chat interface.
+Yuena is being built as a persistent assistant across trusted devices rather than as a single chat interface.
 
 The current desktop reference implementation includes working foundations for:
 
@@ -22,21 +22,21 @@ The private engineering repository remains separate. This public repository cont
 
 - **Road to Japan** — relocation planning built around preparation and financial stability
 - **Motorcycle Project** — rider training, safety equipment, maintenance, and future Japan riding
-- **E.V. Base Japan** — long-term warehouse-style live/work concept, currently research-stage
+- **Yuena Base Japan** — long-term warehouse-style live/work concept, currently research-stage
 
 ## Public site
 
-**https://sleepingesram-dev.github.io/ev-project/**
+**https://sleepingesram-dev.github.io/yuena-project/**
 
-The public site contains the current roadmap, verified E.V. capabilities, project updates, and live support lanes.
+The public site contains the current roadmap, verified Yuena capabilities, project updates, and live support lanes.
 
 ## Support
 
 Optional one-time project support is available through the public support page:
 
-**https://sleepingesram-dev.github.io/ev-project/support.html**
+**https://sleepingesram-dev.github.io/yuena-project/support.html**
 
-Support is project-specific, non-charitable, and not represented as tax-deductible. It does not purchase goods or services. Direct payments are processed through Stripe-hosted Checkout. E.V. Core also has a Ko-fi support option at **https://ko-fi.com/sleepingesram**.
+Support is project-specific, non-charitable, and not represented as tax-deductible. It does not purchase goods or services. Direct payments are processed through Stripe-hosted Checkout. Yuena Core also has a Ko-fi support option at **https://ko-fi.com/sleepingesram**.
 
 ## Transparency
 
@@ -46,11 +46,11 @@ The site distinguishes verified current capabilities from future plans. Funding 
 
 This repository does **not** contain:
 
-- private E.V. source code
+- private Yuena source code
 - API keys or environment files
 - authentication material
 - biometric/voice data
 - private device information
 - local runtime state
 
-The working E.V. codebase remains private.
+The working Yuena codebase remains private.

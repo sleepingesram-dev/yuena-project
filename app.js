@@ -3,20 +3,20 @@
   const path = location.pathname.split("/").pop() || "index.html";
   const nav = [
     ["index.html", "Home"],
-    ["ev.html", "E.V."],
+    ["yuena.html", "Yuena"],
     ["japan.html", "Japan"],
     ["motorcycle.html", "Motorcycle"],
-    ["base.html", "E.V. Base"],
+    ["base.html", "Yuena Base"],
     ["updates.html", "Updates"],
     ["support.html", "Support"]
   ];
 
   const pageTitles = {
-    "index.html": "E.V. / Projects & Roadmap",
-    "ev.html": "E.V. / Personal AI",
+    "index.html": "Yuena / Projects & Roadmap",
+    "yuena.html": "Yuena / Personal AI",
     "japan.html": "Road to Japan",
     "motorcycle.html": "Motorcycle Project",
-    "base.html": "E.V. Base Japan",
+    "base.html": "Yuena Base Japan",
     "updates.html": "Project Updates",
     "support.html": "Support the Build",
     "policies.html": "Payment & Privacy"
@@ -26,8 +26,8 @@
   if (header) {
     header.innerHTML = `
       <div class="nav-shell">
-        <a class="brand page-brand" href="index.html" aria-label="E.V. home">
-          <span class="page-brand-title">${pageTitles[path] || "E.V. / Projects"}</span>
+        <a class="brand page-brand" href="index.html" aria-label="Yuena home">
+          <span class="page-brand-title">${pageTitles[path] || "Yuena / Projects"}</span>
         </a>
         <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">MENU</button>
         <nav class="nav-links" aria-label="Primary navigation">
@@ -47,11 +47,11 @@
     footer.innerHTML = `
       <div class="footer-grid">
         <div>
-          <span class="eyebrow">E.V. / PROJECTS</span>
+          <span class="eyebrow">Yuena / PROJECTS</span>
           <p>One connected roadmap: personal AI, Japan, motorcycles, and a future live/work base.</p>
         </div>
         <div class="footer-links">
-          <a href="ev.html">E.V.</a>
+          <a href="yuena.html">Yuena</a>
           <a href="japan.html">Road to Japan</a>
           <a href="support.html">Support</a>
           <a href="policies.html">Payment & Privacy</a>
@@ -95,7 +95,7 @@
   });
 
   const focus = document.querySelector("[data-current-focus]");
-  if (focus) focus.textContent = cfg.status?.focus || "E.V. development";
+  if (focus) focus.textContent = cfg.status?.focus || "Yuena development";
   const updated = document.querySelector("[data-updated]");
   if (updated) updated.textContent = cfg.status?.updated || "";
 

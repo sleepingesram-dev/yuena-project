@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sleepingesram-dev.github.io/ev-project/sitemap.xml
+Sitemap: https://sleepingesram-dev.github.io/yuena-project/sitemap.xml
