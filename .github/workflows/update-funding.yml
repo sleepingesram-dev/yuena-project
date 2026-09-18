@@ -1,0 +1,87 @@
+name: Update funding counters
+
+on:
+  workflow_dispatch:
+    inputs:
+      ev_core:
+        description: "E.V. Core raised amount in USD (example: 125.50)"
+        required: true
+        default: "0"
+        type: string
+      japan:
+        description: "Road to Japan raised amount in USD"
+        required: true
+        default: "0"
+        type: string
+      motorcycle:
+        description: "Motorcycle Project raised amount in USD"
+        required: true
+        default: "0"
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate and update counters
+        env:
+          EV_CORE: ${{ inputs.ev_core }}
+          JAPAN: ${{ inputs.japan }}
+          MOTORCYCLE: ${{ inputs.motorcycle }}
+        run: |
+          python3 - <<'PY'
+          from decimal import Decimal, InvalidOperation
+          from pathlib import Path
+          import os, re
+
+          values = {
+              "evCore": os.environ["EV_CORE"],
+              "japan": os.environ["JAPAN"],
+              "motorcycle": os.environ["MOTORCYCLE"],
+          }
+
+          normalized = {}
+          for key, raw in values.items():
+              try:
+                  value = Decimal(raw)
+              except InvalidOperation:
+                  raise SystemExit(f"{key}: invalid USD amount: {raw!r}")
+              if value < 0:
+                  raise SystemExit(f"{key}: amount cannot be negative")
+              if value.as_tuple().exponent < -2:
+                  raise SystemExit(f"{key}: use no more than two decimal places")
+              if value == value.to_integral():
+                  normalized[key] = str(value.quantize(Decimal("1")))
+              else:
+                  normalized[key] = format(value.normalize(), "f")
+
+          path = Path("site-config.js")
+          text = path.read_text()
+
+          for key, value in normalized.items():
+              pattern = rf'({key}: \{{ label: "[^"]+", raised: )[^,]+(, target: [^ ]+ \}})'
+              text, count = re.subn(pattern, rf'\g<1>{value}\g<2>', text, count=1)
+              if count != 1:
+                  raise SystemExit(f"Could not find funding entry for {key}")
+
+          path.write_text(text)
+          print("Updated:", ", ".join(f"{k}=${v}" for k, v in normalized.items()))
+          PY
+
+      - name: Commit change
+        run: |
+          if git diff --quiet -- site-config.js; then
+            echo "Funding counters already match these values."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site-config.js
+          git commit -m "Update public funding counters"
+          git push
