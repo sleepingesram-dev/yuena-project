@@ -18,7 +18,8 @@
     "motorcycle.html": "Motorcycle Project",
     "base.html": "E.V. Base Japan",
     "updates.html": "Project Updates",
-    "support.html": "Support the Build"
+    "support.html": "Support the Build",
+    "policies.html": "Payment & Privacy"
   };
 
   const header = document.querySelector("[data-site-header]");
@@ -53,6 +54,7 @@
           <a href="ev.html">E.V.</a>
           <a href="japan.html">Road to Japan</a>
           <a href="support.html">Support</a>
+          <a href="policies.html">Payment & Privacy</a>
         </div>
       </div>
       <div class="footer-bottom">
