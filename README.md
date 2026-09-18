@@ -26,9 +26,17 @@ The private engineering repository remains separate. This public repository cont
 
 ## Public site
 
-Once GitHub Pages finishes publishing:
-
 **https://sleepingesram-dev.github.io/ev-project/**
+
+The public site contains the current roadmap, verified E.V. capabilities, project updates, and live support lanes.
+
+## Support
+
+Optional one-time project support is available through the public support page:
+
+**https://sleepingesram-dev.github.io/ev-project/support.html**
+
+Support is project-specific, non-charitable, and not represented as tax-deductible. It does not purchase goods or services. Payments are processed through Stripe-hosted Checkout.
 
 ## Transparency
 
