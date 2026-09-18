@@ -826,3 +826,14 @@ main { overflow: hidden; }
   .proof-row { grid-template-columns: 28px 1fr; }
   .proof-state { grid-column: 2; margin-top: 2px; }
 }
+
+a[aria-disabled="true"] {
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn.is-pending {
+  color: var(--subtle);
+  border-color: var(--line);
+  opacity: .8;
+}

@@ -69,9 +69,14 @@
       el.target = "_blank";
       el.rel = "noopener noreferrer";
     } else {
-      el.href = "support.html#connect";
+      el.removeAttribute("href");
       el.classList.add("is-pending");
-      el.title = "Link not connected yet";
+      el.setAttribute("aria-disabled", "true");
+      el.title = "Not connected yet";
+      if (!el.dataset.pendingLabelApplied) {
+        el.textContent = el.textContent + " · coming soon";
+        el.dataset.pendingLabelApplied = "true";
+      }
     }
   });
 
