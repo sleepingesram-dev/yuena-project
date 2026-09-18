@@ -837,3 +837,11 @@ a[aria-disabled="true"] {
   border-color: var(--line);
   opacity: .8;
 }
+
+.payment-thanks {
+  display: none;
+}
+
+.payment-thanks:target {
+  display: block;
+}
