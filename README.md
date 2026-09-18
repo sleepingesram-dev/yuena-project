@@ -36,7 +36,7 @@ Optional one-time project support is available through the public support page:
 
 **https://sleepingesram-dev.github.io/ev-project/support.html**
 
-Support is project-specific, non-charitable, and not represented as tax-deductible. It does not purchase goods or services. Payments are processed through Stripe-hosted Checkout.
+Support is project-specific, non-charitable, and not represented as tax-deductible. It does not purchase goods or services. Direct payments are processed through Stripe-hosted Checkout. E.V. Core also has a Ko-fi support option at **https://ko-fi.com/sleepingesram**.
 
 ## Transparency
 
